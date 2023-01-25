@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function GuessInput({ addGuess }) {
+function GuessInput({ addGuess, disabled }) {
   const [guess, setGuess] = useState("");
 
   function handleChange(e) {
@@ -19,6 +19,7 @@ function GuessInput({ addGuess }) {
       <label htmlFor="guess-input">Enter guess:</label>
       <input
         id="guess-input"
+        disabled={disabled}
         required
         minLength={5}
         maxLength={5}
